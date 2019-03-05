@@ -1,0 +1,26 @@
+<p [ngStyle]="{backgroundColor: getColor()}">
+  {{'Server'}} width ID {{serverId}} is {{getServerStatus()}}
+</p>
+<div [ngClass]="{online: serverStatus === 'online' }">
+  {{'Server'}} width ID {{serverId}} is {{getServerStatus()}}
+</div>
+<input class="form-control"
+       (input)="onUpdateServerName($event)"
+       type="text"
+       placeholder="Вывод через ($event)">
+<input class="form-control"
+       [(ngModel)]="serverName"
+       type="text"
+       placeholder="Двусторонняя привязка">
+<p>{{serverName}}</p>
+<button class="btn btn-primary"
+        (click)="onCreateServer()"
+        [disabled]="!allNewServer">
+  Add Server
+</button>
+<p [innerText]="allNewServer"></p>
+<p>{{serverCreationStatus}}</p>
+<p *ngIf="serverCreated; else noServer">Server was create, server name is {{serverName}}</p>
+<ng-template #noServer>No server was created.</ng-template>
+<app-server></app-server>
+<app-server></app-server>
