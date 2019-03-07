@@ -9,3 +9,8 @@ npm install --save bootstrap@3;
 - работа с *ngif, else;
 - ngStyle;
 - ngColor;
+
+"prj-start" : <br>
+- создаие компонентов, вывод некоторых данных в html;
+
+"cmp-databinding-start": <br>
