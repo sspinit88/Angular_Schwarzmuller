@@ -14,4 +14,8 @@ npm install --save bootstrap@3;
 - создаие компонентов, вывод некоторых данных в html;
 
 "cmp-databinding-start": <br>
-- передача данных между компонентами;
+- передача данных между компонентами (@Input, @Output);
+- encapsulation: ViewEncapsulation.Emulated // None, Native;
+- работа с локальной референцией;
+- @ViewChild;
+- работа с     <ng-content></ng-content>;
