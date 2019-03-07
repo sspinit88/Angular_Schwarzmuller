@@ -14,3 +14,4 @@ npm install --save bootstrap@3;
 - создаие компонентов, вывод некоторых данных в html;
 
 "cmp-databinding-start": <br>
+- передача данных между компонентами;
