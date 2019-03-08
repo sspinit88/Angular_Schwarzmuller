@@ -5,35 +5,38 @@
         <div class="col-sm-5 form-group">
           <label for="name">Name</label>
           <input
-              class="form-control"
-              type="text"
-              id="name"
+            #nameInput
+            class="form-control"
+            type="text"
+            id="name"
           >
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
           <input
-              class="form-control"
-              id="amount"
-              type="number"
+            #amountInput
+            class="form-control"
+            id="amount"
+            type="number"
           >
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
           <button
-              class="btn btn-success"
-              type="submit"
+            (click)="onSubmit()"
+            class="btn btn-success"
+            type="submit"
           >Add
           </button>
           <button
-              class="btn btn-danger"
-              type="button"
+            class="btn btn-danger"
+            type="button"
           >Delete
           </button>
           <button
-              class="btn btn-primary"
-              type="button"
+            class="btn btn-primary"
+            type="button"
           >Clear
           </button>
         </div>
