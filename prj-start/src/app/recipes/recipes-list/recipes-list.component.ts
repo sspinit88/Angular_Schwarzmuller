@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { RecepiesModal } from "../recepies.modal";
 
 @Component({
@@ -6,7 +6,7 @@ import { RecepiesModal } from "../recepies.modal";
   templateUrl: './recipes-list.component.html',
   styleUrls: ['./recipes-list.component.css']
 })
-export class RecipesListComponent implements OnInit {
+export class RecipesListComponent {
 
   recipes: RecepiesModal[] = [
     new RecepiesModal(
@@ -19,10 +19,13 @@ export class RecipesListComponent implements OnInit {
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGV7c7xleWs-cqpwrYJ6Te2TmJTg73HeVclQLJoqalY-veivJrtg')
   ];
 
+  @Output() recipeWasSelected = new EventEmitter<RecepiesModal[]>();
+
   constructor() {
   }
 
-  ngOnInit() {
+  onRecipeSelected(item: RecepiesModal[]) {
+    this.recipeWasSelected.emit(item);
   }
 
 }
