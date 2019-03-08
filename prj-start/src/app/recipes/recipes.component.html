@@ -3,6 +3,7 @@
     <app-recipes-list (recipeWasSelected)="selectedRecipe = $event"></app-recipes-list>
   </div>
   <div class="col-md-7">
+    <!--как пример-->
     <app-recipes-detail
       *ngIf="selectedRecipe ; else empty"
       [recipe]="selectedRecipe"
