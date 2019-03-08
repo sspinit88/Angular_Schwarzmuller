@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   loadedFeature: string = 'recipes';
-
+  // change tab when clicked
   onNavigate(feature: string) {
     this.loadedFeature = feature;
   }

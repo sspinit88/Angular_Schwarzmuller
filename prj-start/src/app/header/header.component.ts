@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  // change tab when clicked
   onSelect(feature: string){
     this.featureSelected.emit(feature);
   }
