@@ -23,7 +23,7 @@ export class ShoppingListComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  // shopping-added+list-data-transfer
   onIngredientAdded(ingredient: IngredientModel){
     this.ingredients.push(ingredient);
   }

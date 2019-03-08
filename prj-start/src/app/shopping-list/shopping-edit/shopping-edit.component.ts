@@ -15,7 +15,7 @@ export class ShoppingEditComponent {
 
   constructor() {
   }
-
+  // shopping-added+list-data-transfer
   onSubmit() {
     const newIngredient = new IngredientModel(this.name.nativeElement.value, this.amount.nativeElement.value);
     this.ingredientAdded.emit(newIngredient);
