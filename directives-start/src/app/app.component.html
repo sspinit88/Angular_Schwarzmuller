@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd"
+      >Only show odd numbers
+      </button>
+      <br><br>
+      <div
+        class="list-group"
+      >
+        <ul *ngIf="onlyOdd">
+          <li
+            *ngFor="let odd of oddNumbers"
+            class="list-group-item"
+          >{{ odd }}
+          </li>
+        </ul>
+        <ul *ngIf="!onlyOdd">
+          <li
+            *ngFor="let even of evenNumbers"
+            class="list-group-item"
+          >{{ even }}
+          </li>
+        </ul>
+        <p *appUnless="onlyOdd">Проверка работы свой собственной структурной директивы.</p>
+        <p appBasicHightLight>
+          Style me with basic directive!
+        </p>
+        <p appBetterHightlight [defaultColor]="'yellow'" [higtlightColor]="'red'" (outer)="outStyle($event)">
+          Style me with basic directive!
+        </p>
+      </div>
+      <ng-template [ngIf]="onlyOdd">
+        <p>Only odd</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

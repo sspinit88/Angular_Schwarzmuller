@@ -18,4 +18,10 @@ npm install --save bootstrap@3;
 - encapsulation: ViewEncapsulation.Emulated // None, Native;
 - работа с локальной референцией;
 - @ViewChild;
-- работа с     <ng-content></ng-content>;
+- работа с <ng-content></ng-content>;
+
+"directives-start": <br>
+- создание директивы;
+- работа с nativeElement / Renderer2;
+- вывод данных из директивы;
+- создание структурной директивы;
