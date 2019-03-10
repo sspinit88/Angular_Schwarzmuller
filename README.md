@@ -25,3 +25,16 @@ npm install --save bootstrap@3;
 - работа с nativeElement / Renderer2;
 - вывод данных из директивы;
 - создание структурной директивы;
+
+"services-start": <br>
+- настройка маршрутизации;
+- routerLink;
+- routerLinkActive;
+- routerLinkActiveOptions;
+- использование метода navigate();
+- relativeTo;
+- snapshot.params;
+- params.subscribe();
+- queryParams;
+- fragment;
+
