@@ -19,12 +19,12 @@ export class ServerComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.activatedRoute.snapshot.params['id'];
-
-    this.activatedRoute.params.subscribe(
-      (params: Params) => {
-        this.server = this.serversService.getServer(params['id']);
-      }
-    )
+    this.server = this.serversService.getServer(id);
+    this.activatedRoute.params
+      .subscribe(
+        (params: Params) => {
+          this.server = this.serversService.getServer(+params['id']);
+        }
+      )
   }
-
 }
