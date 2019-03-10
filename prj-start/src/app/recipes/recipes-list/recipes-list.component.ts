@@ -1,31 +1,23 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RecepiesModal } from "../recepies.modal";
+import { RecipeService } from "../../shared/recipe.service";
 
 @Component({
   selector: 'app-recipes-list',
   templateUrl: './recipes-list.component.html',
   styleUrls: ['./recipes-list.component.css']
 })
-export class RecipesListComponent {
+export class RecipesListComponent implements OnInit {
 
-  recipes: RecepiesModal[] = [
-    new RecepiesModal(
-      'A Test Recipe',
-      'This is a simply a test',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGV7c7xleWs-cqpwrYJ6Te2TmJTg73HeVclQLJoqalY-veivJrtg'),
-    new RecepiesModal(
-      'A Test Recipe #2',
-      'This is a simply a test',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGV7c7xleWs-cqpwrYJ6Te2TmJTg73HeVclQLJoqalY-veivJrtg')
-  ];
+  recipes: RecepiesModal[];
 
-  @Output() recipeWasSelected = new EventEmitter<RecepiesModal[]>();
-
-  constructor() {
+  constructor(
+    private recipeService: RecipeService,
+  ) {
   }
 
-  onRecipeSelected(item: RecepiesModal[]) {
-    this.recipeWasSelected.emit(item);
+  ngOnInit() {
+    this.recipes = this.recipeService.getRecipes();
   }
 
 }
