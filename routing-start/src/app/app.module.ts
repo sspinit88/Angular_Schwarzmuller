@@ -24,7 +24,7 @@ const appRoutes: Routes = [
     children: [
       {
         path: ':id/:name',
-        component: UsersComponent,
+        component: UserComponent,
       },
     ],
   },
