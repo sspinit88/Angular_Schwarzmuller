@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Params } from "@angular/router";
 
 import { ServersService } from '../servers.service';
 
@@ -12,27 +12,28 @@ export class EditServerComponent implements OnInit {
   server: { id: number, name: string, status: string };
   serverName = '';
   serverStatus = '';
+  allowEdit: boolean = false;
 
   constructor(
-    private serversService: ServersService,
-    private  activatedRoute: ActivatedRoute,
+      private serversService: ServersService,
+      private  activatedRoute: ActivatedRoute,
   ) {
   }
 
   ngOnInit() {
     // динамическое получение данных внесенных в queryParams и fragment
     this.activatedRoute.queryParams
-      .subscribe(
-        response => {
-          console.log('queryParams', response);
-        }
-      );
+        .subscribe(
+            (queryParams: Params) => {
+              this.allowEdit = queryParams['allowEdit'] === '1' ? true : false;
+            }
+        );
     this.activatedRoute.fragment
-      .subscribe(
-        response => {
-          console.log('fragment: ', response);
-        }
-      );
+        .subscribe(
+            response => {
+              console.log('fragment: ', response);
+            }
+        );
 
     this.server = this.serversService.getServer(1);
     this.serverName = this.server.name;

@@ -37,4 +37,6 @@ npm install --save bootstrap@3;
 - params.subscribe();
 - queryParams;
 - fragment;
-
+- queryParamsHandling;
+- redirectTo;
+- guard;
